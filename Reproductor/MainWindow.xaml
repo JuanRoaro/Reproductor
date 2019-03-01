@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Reproductor"
         mc:Ignorable="d"
-        Title="Reproductor" Height="229.333" Width="499.333">
-    <Grid Height="197" VerticalAlignment="Top" Margin="0,0,-8,0">
+        Title="Reproductor" Height="322" Width="499.333">
+    <Grid Margin="0,0,-8,10">
         <TextBlock HorizontalAlignment="Left" Margin="23,20,0,0" TextWrapping="Wrap" Text="Archivo" VerticalAlignment="Top"/>
         <TextBox x:Name="txtRutaArchivo" HorizontalAlignment="Left" Height="23" Margin="23,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
@@ -25,10 +25,15 @@
         <Slider x:Name="sldReproduccion" HorizontalAlignment="Left" Margin="23,81,0,0" VerticalAlignment="Top" Width="350"/>
         <TextBlock x:Name="lblTiempoActual" HorizontalAlignment="Left" Margin="23,104,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top"/>
         <TextBlock x:Name="lblTiempoTotal" HorizontalAlignment="Left" Margin="345,104,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top"/>
-        <Slider x:Name="sldVolumen" HorizontalAlignment="Left" Margin="441,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.583,-0.5" Width="28" Orientation="Vertical" Height="70"/>
-        <TextBlock HorizontalAlignment="Left" Margin="441,76,0,0" TextWrapping="Wrap" Text="Vol." VerticalAlignment="Top"/>
-        <TextBlock x:Name="lblPorcentajeVolumen" HorizontalAlignment="Left" Margin="420,146,0,0" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top"/>
+        <Slider x:Name="sldVolumen" HorizontalAlignment="Left" Margin="441,104,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.583,-0.5" Width="28" Orientation="Vertical" Height="70" ValueChanged="sldVolumen_ValueChanged" Value="0.5" Maximum="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="441,81,0,0" TextWrapping="Wrap" Text="Vol." VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblPorcentajeVolumen" HorizontalAlignment="Left" Margin="408,158,0,0" TextWrapping="Wrap" Text="50" VerticalAlignment="Top" Width="41"/>
         <ComboBox x:Name="cbSalida" HorizontalAlignment="Left" Margin="10,159,0,0" VerticalAlignment="Top" Width="273"/>
+        <TextBox x:Name="txtDuracionFadeIn" HorizontalAlignment="Left" Height="23" Margin="16,224,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="16,203,0,0" TextWrapping="Wrap" Text="Duracion Fade In (s)" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="183,203,0,0" TextWrapping="Wrap" Text="Duracion Fade Out (s)" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDuracionFadeOut" HorizontalAlignment="Left" Height="23" Margin="183,224,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnFadeOut" Content="Iniciar Fade Out" HorizontalAlignment="Left" Margin="334,224,0,0" VerticalAlignment="Top" Width="99" Height="23" Click="btnFadeOut_Click"/>
 
     </Grid>
 </Window>
